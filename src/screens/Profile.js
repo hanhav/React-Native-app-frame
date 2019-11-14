@@ -4,12 +4,13 @@ import { StyleSheet, View, Text, Dimensions, Image, ImageBackground } from 'reac
 import ProfilePicture from '../assets/ProfilePicture.png';
 import Background from '../assets/Background.png';
 
+// User information
 const profileContent = [
-  {key: 0, label: 'Username:'},
-  {key: 1, label: 'First Name:'},
-  {key: 2, label: 'Last Name:'},
-  {key: 3, label: 'Email:'},
-  {key: 4, label: 'Status:'}
+  {key: 0, label: 'JohnDoe'},
+  {key: 1, label: 'John'},
+  {key: 2, label: 'Doe'},
+  {key: 3, label: 'JohnDoe@email.com'},
+  {key: 4, label: 'Activated'}
 ];
 
 export default class Profile extends Component {
@@ -20,7 +21,11 @@ export default class Profile extends Component {
       style={styles.container}
       >
       <Image style={styles.image} source={ProfilePicture}/>
-       
+          {/* 
+          Start mapping profileContent array and create 
+          a View for each object in array
+          with item data
+        */}
           {profileContent.map((item) => {
             return(
               <View 

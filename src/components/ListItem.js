@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 
+// Validate props (needs to be object)
 const propTypes = {
   item: PropTypes.object
 }
@@ -15,17 +16,21 @@ const propTypes = {
 class ListItem extends Component {
   constructor(props) {
     super(props);
+    // State for each list element
+    // Default not showing subText
     this.state = {
       selected: false,
     };
   };
 
   handleClick = () => {
+    // Change state of selected on user press action
     this.setState(prevState => ({
       selected: !prevState.selected
     }));
   };
 
+  // Function to render subtext on list
   renderSubText = () => {
     return (
     <View style={styles.subContainer}>
@@ -43,6 +48,7 @@ class ListItem extends Component {
             <Text style={styles.titleText}>{this.props.item.heading}</Text>
           </View>
         </TouchableWithoutFeedback>
+        {/* Conditional render for subtext */}
         {selected && this.renderSubText()}
       </View>
     );

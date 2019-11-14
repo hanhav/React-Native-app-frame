@@ -13,6 +13,7 @@ import { withNavigation } from 'react-navigation';
 class RegisterForm extends React.Component {
   constructor(props) {
     super(props);
+    // States for all possible TextInput elements
     this.state = {
         username: "",
         usernameError: "",
@@ -30,6 +31,7 @@ class RegisterForm extends React.Component {
   render() {
     return (
       <View style={styles.container}>
+        {/* Username input field */}
         <TextInput
           style={styles.inputBox}
           underlineColorAndroid="rgba(0, 0, 0, 0)"
@@ -41,11 +43,13 @@ class RegisterForm extends React.Component {
           autoFocus={false}
           keyboardType="email-address"
           value={this.state.username}
+          // Call this whenever user inputs something to update username state
           onChangeText={text => this.setState({ username: text })}
         />
         <View style={styles.warningContainer}>
           <Text style={styles.errorMSG}>{this.state.usernameError}</Text>
         </View>
+        {/* First Name input field */}
         <TextInput
           style={styles.inputBox}
           underlineColorAndroid="rgba(0, 0, 0, 0)"
@@ -56,12 +60,14 @@ class RegisterForm extends React.Component {
           autoCorrect={false}
           autoFocus={false}
           keyboardType="email-address"
-          value={this.state.username}
+          value={this.state.name}
+          // Call this whenever user inputs something to update name state
           onChangeText={text => this.setState({ name: text })}
         />
         <View style={styles.warningContainer}>
-          <Text style={styles.errorMSG}>{this.state.usernameError}</Text>
+          <Text style={styles.errorMSG}>{this.state.nameError}</Text>
         </View>
+        {/* Last Name input field */}
         <TextInput
           style={styles.inputBox}
           underlineColorAndroid="rgba(0, 0, 0, 0)"
@@ -72,12 +78,14 @@ class RegisterForm extends React.Component {
           autoCorrect={false}
           autoFocus={false}
           keyboardType="email-address"
-          value={this.state.username}
+          value={this.state.lastname}
+          // Call this whenever user inputs something to update lastname state
           onChangeText={text => this.setState({ lastname: text })}
         />
         <View style={styles.warningContainer}>
-          <Text style={styles.errorMSG}>{this.state.usernameError}</Text>
+          <Text style={styles.errorMSG}>{this.state.lastnameError}</Text>
         </View>
+        {/* Email input field */}
         <TextInput
           style={styles.inputBox}
           underlineColorAndroid="rgba(0, 0, 0, 0)"
@@ -88,12 +96,14 @@ class RegisterForm extends React.Component {
           autoCorrect={false}
           autoFocus={false}
           keyboardType="email-address"
-          value={this.state.username}
+          value={this.state.email}
+          // Call this whenever user inputs something to update email state
           onChangeText={text => this.setState({ email: text })}
         />
         <View style={styles.warningContainer}>
-          <Text style={styles.errorMSG}>{this.state.usernameError}</Text>
+          <Text style={styles.errorMSG}>{this.state.emailError}</Text>
         </View>
+        {/* Password for new account input field */}
         <TextInput
           style={styles.inputBox}
           underlineColorAndroid="rgba(0, 0, 0, 0)"
@@ -105,11 +115,13 @@ class RegisterForm extends React.Component {
           autoCorrect={false}
           autoFocus={false}
           value={this.state.password}
+          // Call this whenever user inputs something to update password state
           onChangeText={text => this.setState({ password: text })}
         />
         <View style={styles.warningContainer}>
           <Text style={styles.errorMSG}>{this.state.passwordError}</Text>
         </View>
+        {/* OnPress navigate to Home screen */}
         <TouchableOpacity style={styles.Button} onPress={() => this.props.navigation.navigate('Home')}>
           <Text style={styles.buttonText}>Sign Up</Text>
         </TouchableOpacity>

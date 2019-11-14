@@ -8,45 +8,46 @@ import {
 import ListViewItem from '../components/ListItem';
 import Background from '../assets/Background.png';
 
+// Data for listview
 const data = [
   {
     id: 0,
-    heading: 'List item 1',
+    heading: 'Person 1',
     subText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc luctus in dui sed pharetra.'
   },
   {
     id: 1,
-    heading: 'List item 2',
+    heading: 'Person 2',
     subText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc luctus in dui sed pharetra.'
   },
   {
     id: 2,
-    heading: 'List item 3',
+    heading: 'Person 3',
     subText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc luctus in dui sed pharetra.'
   },
   {
     id: 3,
-    heading: 'List item 4',
+    heading: 'Person 4',
     subText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc luctus in dui sed pharetra.'
   },
   {
     id: 4,
-    heading: 'List item 5',
+    heading: 'Person 5',
     subText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc luctus in dui sed pharetra.'
   },
   {
     id: 5,
-    heading: 'List item 6',
+    heading: 'Person 6',
     subText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc luctus in dui sed pharetra.'
   },
   {
     id: 6,
-    heading: 'List item 7',
+    heading: 'Person 7',
     subText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc luctus in dui sed pharetra.'
   },
   {
     id: 7,
-    heading: 'List item 8',
+    heading: 'Person 8',
     subText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc luctus in dui sed pharetra.'
   },
 ]
@@ -59,8 +60,11 @@ export default class Listing extends Component {
       style={styles.container}
       >
         <FlatList 
+          // Set data
           data={data}
+          // Render imported listviewItem
           renderItem={({item}) => <ListViewItem item={item}/>}
+          // Tells list to use the id's for the react keys instead of default key property
           keyExtractor={(index, _) => index + ''}
         />
       </ImageBackground>

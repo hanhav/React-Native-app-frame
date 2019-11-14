@@ -9,6 +9,7 @@ import {
 
 import { withNavigation } from 'react-navigation';
 
+// All Home screen navtabs data in array
 const navTabs = [
   {key: 0, name: 'Search', navLink: 'Search'},
   {key: 1, name: 'Listing', navLink: 'Listing'},
@@ -20,6 +21,11 @@ class HomeNavigationTabs extends React.Component {
   render() {
     return (
       <View style={styles.container}>
+        {/* 
+          Start mapping navTabs array and create 
+          a touchableOpacity for each object in array
+          with item data
+        */}
         {navTabs.map((item) => {
           return(
             <TouchableOpacity 
@@ -36,10 +42,12 @@ class HomeNavigationTabs extends React.Component {
 
 export default withNavigation(HomeNavigationTabs);
 
+// Styles for Navigation Tabs
 const styles = StyleSheet.create({
   container: {
     justifyContent: "center",
     alignItems: "center",
+    // Row rule to get items side by side in map() function
     flexDirection: 'row',
     flexWrap: 'wrap',
   },

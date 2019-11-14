@@ -12,6 +12,7 @@ import Background from '../assets/Background.png';
 export default class Search extends Component {
   constructor(props) {
     super(props);
+    // State for searchvalue
     this.state = {
         value: '',
     };
@@ -24,6 +25,7 @@ export default class Search extends Component {
       >
         <View style={styles.searchSection}>
         <Icon style={styles.searchIcon} name="ios-search" size={20} color="#000"/>
+          {/* Input for searchvalue */}
           <TextInput
             style={styles.input}
             underlineColorAndroid="transparent"
@@ -35,6 +37,7 @@ export default class Search extends Component {
             autoFocus={false}
             keyboardType="default"
             value={this.state.value}
+            // Call this whenever user inputs something to update value state
             onChangeText={text => this.setState({ value: text })}
           />
         </View>

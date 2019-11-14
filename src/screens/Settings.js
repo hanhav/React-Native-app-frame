@@ -9,14 +9,14 @@ import {
 
 import Background from '../assets/Background.png';
 
+// Define Listitems and routes
 const settingTabs = [
-  {key: 0, name: 'Setting 1', navLink: 'subSettingScreen'},
-  {key: 1, name: 'Setting 2', navLink: null},
-  {key: 2, name: 'Setting 3', navLink: null},
-  {key: 3, name: 'Setting 4', navLink: null},
-  {key: 4, name: 'Setting 5', navLink: null},
-  {key: 5, name: 'Setting 6', navLink: null},
-  {key: 6, name: 'Setting 7', navLink: null},
+  {key: 0, name: 'User Settings', navLink: 'subSettingScreen'},
+  {key: 1, name: 'Payment Options', navLink: null},
+  {key: 2, name: 'Security and Login', navLink: null},
+  {key: 3, name: 'Linked Applications', navLink: null},
+  {key: 4, name: 'Privacy settings', navLink: null},
+  {key: 5, name: 'Application access settings', navLink: null},
 ];
 
 export default class Settings extends Component {
@@ -26,6 +26,11 @@ export default class Settings extends Component {
         source={Background} 
         style={styles.container}
       >
+        {/* 
+          Start mapping settingsTabs array and create 
+          a touchableOpacity for each object in array
+          with item data
+        */}
         {settingTabs.map((item) => {
           return(
             <TouchableOpacity 

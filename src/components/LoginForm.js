@@ -13,6 +13,7 @@ import { withNavigation } from 'react-navigation';
 class LoginForm extends React.Component {
   constructor(props) {
     super(props);
+    // States for all possible TextInput elements
     this.state = {
       username: "",
       usernameError: "",
@@ -24,6 +25,7 @@ class LoginForm extends React.Component {
   render() {
     return (
       <View style={styles.container}>
+        {/* Username input field */}
         <TextInput
           style={styles.inputBox}
           underlineColorAndroid="rgba(0, 0, 0, 0)"
@@ -35,11 +37,13 @@ class LoginForm extends React.Component {
           autoFocus={false}
           keyboardType="email-address"
           value={this.state.username}
+          // Call this whenever user inputs something to update username state
           onChangeText={text => this.setState({ username: text })}
         />
         <View style={styles.warningContainer}>
           <Text style={styles.errorMSG}>{this.state.usernameError}</Text>
         </View>
+        {/* Password input field */}
         <TextInput
           style={styles.inputBox}
           underlineColorAndroid="rgba(0, 0, 0, 0)"
@@ -47,15 +51,18 @@ class LoginForm extends React.Component {
           name="password"
           placeholder='Password'
           autoCapitalize="none"
+          // Set as true to hide user input
           secureTextEntry={true}
           autoCorrect={false}
           autoFocus={false}
           value={this.state.password}
+          // Call this whenever user inputs something to update password state
           onChangeText={text => this.setState({ password: text })}
         />
         <View style={styles.warningContainer}>
           <Text style={styles.errorMSG}>{this.state.passwordError}</Text>
         </View>
+        {/* OnPress navigate to Home screen */}
         <TouchableOpacity style={styles.Button} onPress={() => this.props.navigation.navigate('Home')}>
           <Text style={styles.buttonText}>Sign In</Text>
         </TouchableOpacity>
@@ -66,6 +73,7 @@ class LoginForm extends React.Component {
 
 export default withNavigation(LoginForm);
 
+// Styling for input elements
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
